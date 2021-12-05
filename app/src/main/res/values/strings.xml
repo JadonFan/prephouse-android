@@ -1,0 +1,39 @@
+<resources>
+    <!-- Common -->
+    <string name="app_name">Prephouse</string>
+    <string name="back">Back</string>
+    <string name="ok">@android:string/ok</string>
+
+    <!-- System -->
+    <string name="permission_request">Permission request</string>
+    <string name="password_strength" comment="placeholder is the password strength indicator">Password strength: %1$s</string>
+    <string-array name="password_strength_class">
+        <item>Extremely Weak</item>
+        <item>Very Weak</item>
+        <item>Weak</item>
+        <item>Adequate</item>
+        <item>Strong</item>
+    </string-array>
+
+    <!-- Practice -->
+    <string name="practice">Practice</string>
+    <string name="start_interview">Start interview</string>
+
+    <!-- Homepage -->
+    <string name="home">Home</string>
+    <string name="welcome">Welcome to Prephouse!</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Dashboard</string>
+
+    <!-- Preferences -->
+    <string name="preferences">Preferences</string>
+
+    <!-- Profile -->
+    <string name="profile">My Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign up</string>
+</resources>
