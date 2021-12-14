@@ -1,16 +1,21 @@
 # Prephouse Android (ph-android)
 
-## Setup Instructions
+## Instructions
 
-1. Download and install [Android Studio 2020.3](https://developer.android.com/studio) or later
+### Setup
+
+1. Download and install [Android Studio 2020.3][android-studio] or later
 2. Follow the prompts from Android Studio
 3. Download and install a virtual Android device in the AVD manager of Android Studio, or connect
 your physical Android device to Android Studio via USB or, with Android 11+, via Wi-Fi
 4. In the _Build Variants_ tab, select _debug_ as the active build variant for the _app_ module
 
-## Startup Instructions 
+### Startup
 
-1. Click on the _Run 'app'_ button in the top right menu bar of Android Studio to run the application
+1. Click on the _Run 'app'_ button in the top right menu bar of Android Studio to run the
+   application
+
+[android-studio]: https://developer.android.com/studio
 
 ## Project Modules
 
@@ -24,17 +29,20 @@ This project contains the following modules
 
 ## Jetpack Compose
 
-The app is **fully** written in [Jetpack Compose](https://developer.android.com/jetpack/compose)
-with [Material3 components](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary).
+The app is **fully** written in [Jetpack Compose][compose] with [Material3 components][material3].
 
 This app includes some libraries that wrap well-known views as composables, such as
-[Landscapist](https://github.com/skydoves/Landscapist) for a Glide composable and
-[Accompanist](https://google.github.io/accompanist/) for, among other things, a Permission composable.
-If Compose is not supported by a third-party library, you can continue to use a XML layout
-via an `AndroidView` composable.
+[Landscapist][landscapist] for a Glide composable and [Accompanist][accompanist] for, among
+other things, a Permission composable. If Compose is not supported by a third-party library,
+you can continue to use a XML layout via an `AndroidView` composable.
 
-You may want to annotate your composable with [`@ReadOnlyComposable`](https://developer.android.com/reference/kotlin/androidx/compose/runtime/ReadOnlyComposable)
-when it is safe to do so in order to generate a slightly more efficient composable.
+You may want to annotate your composable with `@ReadOnlyComposable` when it is safe to do so in
+order to generate a slightly more efficient composable.
+
+[compose]: https://developer.android.com/jetpack/compose
+[material3]: https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary
+[landscapist]: https://github.com/skydoves/Landscapist
+[accompanist]: https://google.github.io/accompanist/
 
 ## Compatibility
 
@@ -51,7 +59,11 @@ Architecture Components. The design pattern is summarized in _Figure 1_ except t
 replaces LiveData in the view model.
 
 <figure>
-    <img src="https://developer.android.com/topic/libraries/architecture/images/final-architecture.png" alt="mvvm skeleton diagram"> <br>
+    <img
+      src="https://developer.android.com/topic/libraries/architecture/images/final-architecture.png"
+      alt="mvvm skeleton diagram"
+    >
+    <br>
     <figcaption>
         Figure 1: MVVM design pattern <br>
         https://developer.android.com/topic/libraries/architecture/images/final-architecture.png
@@ -61,13 +73,16 @@ replaces LiveData in the view model.
 
 ## Code Style
 
-We are following the official [Kotlin style guide](https://kotlinlang.org/docs/coding-conventions.html).
-You can configure the Kotlin code style on Android Studio by following the instructions
-[here](https://kotlinlang.org/docs/coding-conventions.html).
+We are following the official [Kotlin style guide][kt-style-guide]. You can configure the Kotlin
+code style on Android Studio by following the instructions [here][kt-style-config].
 
-We use [ktlint](https://github.com/pinterest/ktlint) to enforce the code style. You can run
-`./gradlew ktlintFormat` on your CLI to get ktlint to detect, and where possible automatically fix,
-code violations. A pre-commit hook has also been set up for you.
+We use [ktlint][ktlint] to enforce the code style. You can run `./gradlew ktlintFormat` on your
+CLI to get ktlint to detect, and where possible automatically fix, code violations. A pre-commit
+hook has also been set up for you.
+
+[kt-style-guide]: https://kotlinlang.org/docs/coding-conventions.html
+[kt-style-config]: https://kotlinlang.org/docs/coding-conventions.html
+[ktlint]: https://github.com/pinterest/ktlint
 
 ## Libraries
 
@@ -119,7 +134,8 @@ complicated to do so with Database, or when we want to cache certain API respons
 
 - Examine the table schemas for Room DBs in the [app/schemas](app/schemas) directory
 - Utilize Room auto migration where possible
-- Annotate enums that implement the [`NumberedEnum`](app/src/main/java/com/prephouse/prephouse/utils/NumberedEnum.kt) interface with the `@Convertible` annotation
+- Annotate enums that implement the [`NumberedEnum`](app/src/main/java/com/prephouse/prephouse/utils/NumberedEnum.kt)
+  interface with the `@Convertible` annotation
 - Implement any Room type converters where necessary in the
   [com.prephouse.prephouse.models.converters](app/src/main/java/com/prephouse/prephouse/models/converters) package
 
